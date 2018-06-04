@@ -45,36 +45,8 @@ angular.module('quest-edit', ['ngCookies'])
       }
     }
 
-    questList.name = '範例問卷';
-    questList.questions = [
-      new quest({
-        content: '標題（一）',
-        type: questType.RADIO,
-        edit: true,
-        selection: [
-          '選項（一）',
-          '選項（二）'
-        ]
-      })
-      , new quest({
-        content: '標題（二）',
-        type: questType.CHECKBOX,
-        edit: false,
-        selection: [
-          '選項（一）',
-          '選項（二）'
-        ]
-      }), new quest({
-        content: '標題（三）',
-        edit: false,
-        type: questType.TEXTAREA
-      })
-    ]
-
-    questList.dialog = {
-      title: '正在發布中',
-      message: '請稍後...'
-    }
+    questList.name = '';
+    questList.questions = [];
 
     questList.add = function () {
       questList.questions.push(new quest({
