@@ -12,7 +12,8 @@ router.all('/echo', function(req, res, next) {
 });
 
 router.post('/survey', (req, res) => {
-  console.log(req.body);
+  console.log(req.get('Content-Type'));
+  console.log(JSON.stringify(req.body));
   res.json({message: '請注意 E-mail 查收'});
 })
 
