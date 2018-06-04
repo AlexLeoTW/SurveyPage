@@ -1,0 +1,58 @@
+main {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.quest_card {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quest_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quest_title button {
+  /* height: 2.5rem; */
+}
+
+.quest_title span {
+  font-size: 1.2rem;
+}
+
+.quest_option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2rem;
+  margin-bottom: 0.8em;
+}
+
+.quest_option * {
+  margin: 0 0 0 0;
+}
+
+.quest_option *:first-child {
+  margin-right: 0.5rem;
+}
+
+.quest_control {
+  display: flex;
+  padding-top: 0.5em;
+  justify-content:flex-end;
+}
+
+.quest_control button {
+  margin: 0.2rem;
+}
+
+.survey_control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.survey_control button {
+  margin: 0.3rem;
+}
