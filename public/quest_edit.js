@@ -94,26 +94,29 @@ angular.module('quest-edit', ['ngCookies'])
       $('#sendDialog').modal({ show: true });
 
       var quests = questList.questions.map((question) => {
-        delete question.edit;
-        if (question.type == 0) {
-          delete question.selection;
-        } else {
-          question.selection = question.selection.map((selection) => {
+        var questionObj = {
+          content: question.content,
+          type: question.type
+        }
+
+        if (!question.type == 0) {
+          questionObj.selection = question.selection.map((selection) => {
             return { content: selection };
           })
         }
-        return question;
+        return questionObj;
       })
 
       $http({
         method: 'POST',
-        // url: `/questionnaire/api/ba/question/create/A001/${$cookies.get('username')}/${$cookies.get('tokeen')}`,
+        // url: `http://123.240.124.73:8080/questionnaire/api/ba/question/create/A001/${$cookies.get('username')}/${$cookies.get('tokeen')}`,
         url: '/survey',
-        data: { name: questList.name, question: questList.questions }
+        data: { name: questList.name, question: quests }
       }).then(function successCallback(response) {
           questList.dialog = {
             title: '完成',
-            message: response.data.message,
+            // message: response.data.message,
+            message: response.data.data[0].massage,
             redirect: '/'
           }
         }, function errorCallback(response) {
