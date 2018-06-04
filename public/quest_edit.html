@@ -19,13 +19,20 @@
     <main class="container">
 
       <div ng-controller="questListController as questList" id="ng-quest-edit">
-        <div ng-repeat="quest in questList.quests">
 
-          <div ng-hide="quest.edit">
+        <form class="shadow bg-white rounded  quest_card">
+          <input class="form-control form-control-lg" type="text" placeholder="標題" ng-model="questList.title">
+        </form>
+
+        <hr/> <!-- ======================================================== -->
+
+        <div ng-repeat="question in questList.questions">
+
+          <div ng-hide="question.edit">
             <!-- no-edit -->
             <div ng-include src="'partial/quest_view.html'"></div>
           </div>
-          <div ng-hide="!quest.edit">
+          <div ng-hide="!question.edit">
             <!-- edit -->
             <div ng-include src="'partial/quest_edit.html'"></div>
           </div>
